@@ -1,0 +1,29 @@
+{
+  "name": "fullstackanalitika",
+  "version": "1.0.0",
+  "description": "fullstack app with angular and express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaksimSklianik/FullstackAnalitika.git"
+  },
+  "keywords": [
+    "express",
+    "angular"
+  ],
+  "author": "Maksim Sklianik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaksimSklianik/FullstackAnalitika/issues"
+  },
+  "homepage": "https://github.com/MaksimSklianik/FullstackAnalitika#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
