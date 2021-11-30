@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const authRoutes = require('./routes/auth')
 
-
 const analyticsRoutes = require('./routes/analytics')
 const categoryRoutes = require('./routes/category')
 const orderRoutes = require('./routes/order')
@@ -12,14 +11,18 @@ const keys = require('./config/kyes')
 
 const app = express()
 
+
 mongoose.connect(keys.MongoURI)
     .then(() => console.log("mongoDB Connected"))
     .catch(error => console.log(error))
+
 
 app.use(require('morgan')('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(require("cors")())
+
+
 
 
 app.use('/api/auth', authRoutes)
