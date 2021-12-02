@@ -13,20 +13,20 @@ const keys = require('./config/kyes')
 
 const app = express()
 
-
-mongoose.connect(keys.MongoURI)
-    .then(() => console.log("mongoDB Connected"))
+mongoose.connect(keys.mongoURI)
+    .then(() => console.log('MongoDB connected.'))
     .catch(error => console.log(error))
 
 
 app.use(passport.initialize())
-require('./middleware/passport.js')(passport)
+require('./middleware/passport')(passport)
 
 
 app.use(require('morgan')('dev'))
+app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-app.use(require("cors")())
+app.use(require('cors')())
 
 
 app.use('/api/auth', authRoutes)
