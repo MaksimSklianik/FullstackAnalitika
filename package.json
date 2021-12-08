@@ -5,7 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+
+    "client-install": "npm install --prefix client",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+
+
+
+
+
+
   },
   "repository": {
     "type": "git",
@@ -34,5 +44,8 @@
     "nodemon": "^2.0.15",
     "passport": "^0.5.0",
     "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0"
   }
 }
